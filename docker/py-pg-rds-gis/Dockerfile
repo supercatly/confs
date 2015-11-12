@@ -18,7 +18,11 @@ RUN pip install psycopg2
 RUN pip install flask
 RUN pip install redis
 
-RUN cp /etc/apache2/mods-available/proxy.* /etc/apache2/mods-enabled/
-RUN cp /etc/apache2/mods-available/proxy_http.* /etc/apache2/mods-enabled/
+ADD sites.ini /var/www/
+ADD sites.conf /etc/apache2/sites-available/
+
+RUN ln -s /etc/apache2/mods-available/proxy.* /etc/apache2/mods-enabled/
+RUN ln -s /etc/apache2/mods-available/proxy_http.* /etc/apache2/mods-enabled/
+RUN ln -s /etc/apache2/sites-available/sites.conf /etc/apache2/sites-enabled/
 
 EXPOSE 80 6379 5432
