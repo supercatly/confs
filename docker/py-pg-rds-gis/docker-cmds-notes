@@ -1,1 +1,3 @@
-docker run -d -p 5432:5432 -v /root/data:/data py-pg-rds-gis su -m postgres -c /data/run_pg.sh
+
+# 使用主机网络运行pg
+docker run -d -p 5432:5432 --net="host" -v /root/data:/data py-pg-rds-gis su -m postgres -c /data/run_pg.sh
