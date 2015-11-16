@@ -1,0 +1,1 @@
+docker run -d -p 5432:5432 -v /root/data:/data py-pg-rds-gis su -m postgres -c /data/run_pg.sh
