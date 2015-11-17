@@ -19,9 +19,7 @@ RUN pip install psycopg2
 RUN pip install flask
 RUN pip install redis
 
-RUN mkdir /data/pg-data
-RUN chown  postgres:postgres /data/pg-data
-RUN su -m postgres -c "/usr/lib/postgresql/9.3/bin/initdb --pgdata=/data/pg-data"
+
 
 
 
