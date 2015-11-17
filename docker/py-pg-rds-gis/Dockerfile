@@ -14,7 +14,6 @@ RUN apt-get install -y postgresql-9.3-postgis-2.1
 RUN apt-get install -y python-pip
 RUN apt-get install -y redis-server
 RUN apt-get install -y uwsgi
-RUN apt-get install -y emacs
 
 RUN pip install psycopg2
 RUN pip install flask
