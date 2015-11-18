@@ -1,0 +1,13 @@
+
+
+[program:uwsgi_mysite]
+command=uwsgi --ini /var/www/mysite/uwsgi/sites.ini:mysite
+directory=/var/www/mysite/
+numprocs=1
+stopsignal=HUP
+user=www-data
+killasgroup=true
+stopasgroup=true
+autostart=true
+stdout_logfile=/var/log/uwsgi_mysite.supervisor.log
+stderr_logfile=/var/log/uwsgi_mysite.supervisor.err
